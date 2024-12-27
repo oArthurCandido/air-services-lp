@@ -1,38 +1,37 @@
-"use client";
-import React, { useState } from "react";
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-  } from "@/components/ui/drawer"
+import React from "react";
+// import {
+//     Drawer,
+//     DrawerClose,
+//     DrawerContent,
+//     DrawerDescription,
+//     DrawerFooter,
+//     DrawerHeader,
+//     DrawerTitle,
+//     DrawerTrigger,
+//   } from "@/components/ui/drawer"
 
 const Header = () => {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
-      e.preventDefault();
+    // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    // const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+    //   e.preventDefault();
       
-      const section = document.getElementById(id);
+    //   const section = document.getElementById(id);
       
 
       
     
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
+    //   if (section) {
+    //     section.scrollIntoView({ behavior: "smooth" });
+    //   }
 
-      const currentScrollY = window.scrollY;
-      console.log('current: ', currentScrollY);
-      // Aguarde um momento antes de fechar o Drawer para evitar interferências
-      setTimeout(() => {
-        setIsDrawerOpen(false);
-        window.scrollTo({ top: 500, behavior: "auto" });
-      },3000); // Ajuste o tempo conforme necessário
-    };
+    //   const currentScrollY = window.scrollY;
+    //   console.log('current: ', currentScrollY);
+    //   // Aguarde um momento antes de fechar o Drawer para evitar interferências
+    //   setTimeout(() => {
+    //     setIsDrawerOpen(false);
+    //     window.scrollTo({ top: 500, behavior: "auto" });
+    //   },3000); // Ajuste o tempo conforme necessário
+    // };
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 ">
