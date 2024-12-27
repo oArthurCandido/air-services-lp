@@ -1,0 +1,108 @@
+{
+  "section1": {
+    "title": "Gestão PPR: Proteja Equipes, Elimine Riscos, Otimize Resultados",
+    "subtitle": "A AIR SERVICES te ajuda na elaboração, implementação e gestão do Programa de Proteção Respiratória, assegurando a saúde dos seus colaboradores e a conformidade com a legislação.",
+    "cta1": "Solicite um orçamento",
+    "cta2": ""
+  },
+
+  "content": [
+        {
+            "title": "Visita Técnica – Diagnóstico PPR",
+            "description": "Avaliação completa do seu PPR atual, identificando pontos fortes, fracos e oportunidades de melhoria.",
+            "src": "/images/visita-tecnica-diagnostico.jpg"
+        },
+        {
+            "title": "Consultoria na Implementação do PPR",
+            "description": "Criação e implementação de um PPR sob medida para sua empresa, atendendo às normas regulamentadoras e às necessidades específicas do seu negócio.",
+            "src": "/images/consultoria-implementacao-ppr.jpg"
+        },
+        {
+            "title": "Treinamento para Usuários de EPR's",
+            "description": "Treinamento completo para os usuários de Equipamentos de Proteção Respiratória (EPRs) sobre o uso correto, manutenção e importância do PPR.",
+            "src": "/images/treinamento-uso-equipamentos-seguranca-respiratoria.jpg"
+        },
+        {
+            "title": "Treinamento para o Administrador do PPR",
+            "description": "Capacitação do administrador do PPR para gerenciar o programa de forma eficaz, garantindo o cumprimento das normas e a segurança dos colaboradores.",
+            "src": "/images/treinamento-administrador-ppr.jpg"
+        },
+        {
+            "title": "Treinamento para Lideranças do PPR",
+            "description": "Preparo das lideranças para promover a cultura de segurança respiratória e supervisionar a implementação do PPR.",
+            "src": "/images/treinamento-liderancas-ppr.jpg"
+        },
+        {
+            "title": "Ensaios de Vedação Qualitativo e Quantitativo",
+            "description": "Realização de ensaios de vedação para garantir o ajuste adequado dos respiradores aos usuários, minimizando riscos de contaminação.",
+            "src": "/images/ensaios-vedacao-qualitativo-quantitativo.jpg"
+        },
+        {
+            "title": "Elaboração do Documento Base do PPR",
+            "description": "Desenvolvimento de um documento base completo e personalizado para o seu PPR, atendendo a todos os requisitos legais e especificidades da sua empresa.",
+            "src": "/images/elaboracao-documento-base-ppr.jpg"
+        },
+        {
+            "title": "Renovação do PPR",
+            "description": "Atualização e adequação do seu PPR às normas vigentes e às mudanças no ambiente de trabalho.",
+            "src": "/images/elaboracao-documento-base-ppr.jpg"
+        },
+        {
+            "title": "Qualificação para Condutores de Ensaios de Vedação",
+            "description": "Treinamento para capacitar profissionais na realização de ensaios de vedação de forma eficiente e segura.",
+            "src": "/images/elaboracao-documento-base-ppr.jpg"
+        },
+        {
+            "title": "Treinamento – Proficiência em Proteção Respiratória",
+            "description": "Formação avançada para profissionais que desejam aprofundar seus conhecimentos sobre proteção respiratória e os diferentes tipos de EPRs.",
+            "src": "/images/elaboracao-documento-base-ppr.jpg"
+        },
+        {
+            "title": "Auditoria do PPR",
+            "description": "Análise detalhada do seu PPR, identificando não conformidades e recomendando ações corretivas para garantir a eficácia do programa.",
+            "src": "/images/elaboracao-documento-base-ppr.jpg"
+        },
+        {
+            "title": "Workshop e Palestras",
+            "description": "Eventos personalizados para conscientizar e capacitar sua equipe sobre a importância da proteção respiratória e do PPR.",
+            "src": "/images/elaboracao-documento-base-ppr.jpg"
+        },
+        {
+            "title": "Mentorias",
+            "description": "Acompanhamento individualizado para auxiliar na gestão do PPR e na resolução de problemas específicos.",
+            "src": "/images/elaboracao-documento-base-ppr.jpg"
+        }
+    ],
+    "benefits": [
+        {
+            "title": "Proteção dos Colaboradores",
+            "description": "Garanta a saúde e a segurança dos seus colaboradores, evitando doenças respiratórias e outros riscos ocupacionais.",
+            "icon": "/images/capacete.svg"
+        },
+        {
+            "title": "Conformidade Legal",
+            "description": "Atenda às normas regulamentadoras e evite multas e penalidades por descumprimento das leis trabalhistas.",
+            "icon": "/images/capacete.svg"
+        },
+        {
+            "title": "Redução de Custos",
+            "description": "Evite gastos com afastamentos, processos trabalhistas e indenizações, protegendo o seu patrimônio e a imagem da empresa.",
+            "icon": "/images/capacete.svg"
+        },
+        {
+            "title": "Aumento da Produtividade",
+            "description": "Colaboradores saudáveis e seguros são mais produtivos e engajados, contribuindo para o crescimento e o sucesso do negócio.",
+            "icon": "/images/capacete.svg"
+        },
+        {
+            "title": "Gestão Eficiente",
+            "description": "Tenha um PPR bem estruturado e gerenciado, facilitando a tomada de decisões e a implementação de melhorias contínuas.",
+            "icon": "/images/capacete.svg"
+        },
+        {
+            "title": "Personalização",
+            "description": "Desenvolvemos soluções personalizadas para atender às necessidades específicas da sua empresa, garantindo a eficácia do PPR.",
+            "icon": "/images/capacete.svg"
+        }
+    ]
+}

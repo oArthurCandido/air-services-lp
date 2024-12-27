@@ -1,101 +1,111 @@
-import Image from "next/image";
+import { CardIconTextProps } from "@/components/elements/CardIconText";
+import SectionTitle from "@/components/elements/SectionTitle";
+import BenefitsGrid from "@/components/sections/BenefitsGrid";
+import CarouselTestimonials from "@/components/sections/CarouselTestimonials";
+import Hero2 from "@/components/sections/Hero2";
+import TextImageContent from "@/components/sections/TextImageContent";
+import { TextImageContentProps } from "@/components/sections/TextImageContent";
+import { promises as fs } from "fs";
 
-export default function Home() {
+type PageProps = {
+  section1: {
+    title: string;
+    titleSecondPart: string;
+    subtitle: string;
+    cta1: string;
+    cta2: string;
+  };
+  content: TextImageContentProps[];
+  benefits: CardIconTextProps[];
+};
+
+export default async function Home() {
+  const file = await fs.readFile(
+    process.cwd() + "/src/app/data/page.json",
+    "utf8"
+  );
+
+  const data = JSON.parse(file) as PageProps;
+
+  const randomPicture = (index: number) => {
+    const random = Math.floor(Math.random() * 1000);
+    return `https://picsum.photos/id/${random + index}/1600/900`;
+  };
+
+
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <>
+      <Hero2
+        title={data.section1?.title}
+        cta1={data.section1?.cta1}
+        cta2={data.section1?.cta2}
+        subtitle={data.section1?.subtitle}
+      />
+      <section id="services" className="pb-0">
+        <SectionTitle title="Serviços" subtitle="Conheça nossos serviços" />
+        {data.content &&
+          data.content.map((content, index) => (
+            <TextImageContent
+              key={index}
+              {...content}
+              rtl={index % 2 == 0}
+              className={(index % 2 == 1 ? "bg-slate-50" : "") + " "  + "py-10 sm:py-12 lg:py-16"}
+              src={content.src || randomPicture(index)}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          ))}
+      </section>
+      <section id="benefits" className="bg-slate-50">
+        <SectionTitle title="Benefícios" subtitle="Veja os benefícios de trabalhar conosco" />
+        <div className="md:max-w-screen-md lg:max-w-screen-xl mx-auto px-16 pt-8">
+          <BenefitsGrid benefits={data.benefits} />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+      <section id="testimonials"  >
+        <div className="md:max-w-screen-md lg:max-w-screen-xl mx-auto px-16">
+          <SectionTitle title="Depoimentos" subtitle="Veja o que nossos clientes estão dizendo" />
+          <CarouselTestimonials
+            testimonials={[
+              {
+                name: "John Doe",
+                title: "CEO",
+                quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+                img: "https://randomuser.me/api/portraits/men/62.jpg",
+              },
+              {
+                name: "Jane Doe",
+                title: "CTO",
+                quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+                img: "https://randomuser.me/api/portraits/women/62.jpg",
+              },{
+                name: "John Doe",
+                title: "CEO",
+                quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+                img: "https://randomuser.me/api/portraits/men/62.jpg",
+              },
+              {
+                name: "Jane Doe",
+                title: "CTO",
+                quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+                img: "https://randomuser.me/api/portraits/women/62.jpg",
+              },{
+                name: "John Doe",
+                title: "CEO",
+                quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+                img: "https://randomuser.me/api/portraits/men/62.jpg",
+              },
+              {
+                name: "Jane Doe",
+                title: "CTO",
+                quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+                img: "https://randomuser.me/api/portraits/women/62.jpg",
+              },
+            ]}
+          
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </section>
+      <footer className="h-32 bg-primary"></footer>
+    </>
   );
 }
